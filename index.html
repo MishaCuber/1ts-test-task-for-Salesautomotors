@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workiz Test Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="widget-content">
+      <button id="create-job-btn" class="submit-btn" style="width:100%;margin-bottom:24px;">NEW Create a job</button>
+      <form id="workiz-form" style="display:none;">
+        <div class="grid">
+          <div class="card">
+            <h2>Client details</h2>
+            <div class="row">
+              <input type="text" name="first_name" placeholder="First name" required>
+              <input type="text" name="last_name" placeholder="Last name" required>
+            </div>
+            <input type="tel" name="phone" placeholder="Phone" required>
+            <input type="email" name="email" placeholder="Email (optional)">
+          </div>
+          <div class="card">
+            <h2>Job details</h2>
+            <div class="row">
+              <select name="job_type" required>
+                <option value="" disabled selected>Job type</option>
+                <option value="installation">Installation</option>
+                <option value="repair">Repair</option>
+                <option value="maintenance">Maintenance</option>
+              </select>
+              <select name="job_source" required>
+                <option value="" disabled selected>Job source</option>
+                <option value="website">Website</option>
+                <option value="phone">Phone</option>
+                <option value="referral">Referral</option>
+              </select>
+            </div>
+            <textarea name="job_description" placeholder="Job description (optional)"></textarea>
+          </div>
+          <div class="card">
+            <h2>Service location</h2>
+            <input type="text" name="address" placeholder="Address" required>
+            <input type="text" name="city" placeholder="City" required>
+            <input type="text" name="state" placeholder="State" required>
+            <div class="row">
+              <input type="text" name="zip_code" placeholder="Zip code" required>
+              <select name="area" required>
+                <option value="" disabled selected>Area</option>
+                <option value="north">North</option>
+                <option value="south">South</option>
+                <option value="east">East</option>
+                <option value="west">West</option>
+              </select>
+            </div>
+          </div>
+          <div class="card">
+            <h2>Scheduled</h2>
+            <div class="row">
+              <input type="date" name="start_date" required>
+              <input type="time" name="start_time" required>
+              <input type="time" name="end_time" required>
+            </div>
+            <select name="test_select" required>
+              <option value="" disabled selected>Test select</option>
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+        <div id="form-message"></div>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('create-job-btn').onclick = function() {
+      this.style.display = 'none';
+      document.getElementById('workiz-form').style.display = 'block';
+    };
+  </script>
+</body>
+</html> 
